@@ -58,7 +58,7 @@ def st_ui():
     ''' Function to render the Streamlit UI.
     '''
     st.title('Check toxicity...')
-    text = st.text_input('Paste you test here...', value='')
+    text = st.text_input('Paste you text here...', value='')
     button = st.button('Check toxicity...')
     if button:
         result = check_toxicity(text=text)
