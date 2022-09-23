@@ -1,6 +1,6 @@
 # Check Toxicity
 
-This Daisi is a simple application that will return you probabilities of a piece of text to be toxic. This application uses the state-of-the-art NLP technology by Unitary with the help of HuggingFace🤗 and Transformers.
+This Daisi is a simple application that will return you probabilities of a piece of text being toxic. This application uses the state-of-the-art NLP technology by Unitary with the help of HuggingFace🤗 and Transformers.
 
 The technology I have used are:
 * [Transformers](https://github.com/huggingface/transformers)
