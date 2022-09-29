@@ -13,9 +13,9 @@ def check_toxicity(text: str) -> dict:
     the status of the response either 0 or 1, a message either Successful or Unsuccessful,
     and finally a result object that has six classes as keys and their respective probabilites as their values.
 
-    :param str text: The text as an input to check it's toxicity
+    :param text(str): The text as an input to check it's toxicity
 
-    :return: Results of the Bert model
+    :return object: Results of the Bert model
     '''
     try:
         inputs = toxic_bert_tokenizer(text, return_tensors='pt')
