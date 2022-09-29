@@ -6,29 +6,16 @@ toxic_bert_tokenizer = AutoTokenizer.from_pretrained("unitary/toxic-bert")
 toxic_bert_model = AutoModelForSequenceClassification.from_pretrained("unitary/toxic-bert")
 
 def check_toxicity(text: str) -> dict:
-    ''' Check the text for toxicity
+    ''' 
+    Check the provided text for toxicity.
 
-        Parameters:
-        - text: str
+    This function takes a string as an input and returns an object that has,
+    the status of the response either 0 or 1, a message either Successful or Unsuccessful,
+    and finally a result object that has six classes as keys and their respective probabilites as their values.
 
-        Returns:
-        - dict
+    :param str text: The text as an input to check it's toxicity
 
-        Example return dict:
-        - {
-            "status": 0/1,
-            "message": Successful/Unsuccessful,
-            "result": {
-                "toxic":"0.92"
-                "severe_toxic":"0.04"
-                "obscene":"0.59"
-                "threat":"0.01"
-                "insult":"0.19"
-                "identity_hate":"0.28"
-            }
-        }
-
-        "result" can be an empty dictionary in case of "status" 0
+    :return: Results of the Bert model
     '''
     try:
         inputs = toxic_bert_tokenizer(text, return_tensors='pt')
